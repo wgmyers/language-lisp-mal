@@ -1,0 +1,27 @@
+scopeName: 'source.mal'
+name: 'Mal'
+fileTypes: [
+  'mal'
+]
+limitLineLength: false
+foldingStartMarker: '('
+foldingStopMarker: ')'
+
+patterns: [
+  {
+    match: ";.*$"
+    name: "comment.line.semicolon.mal"
+  }
+  {
+    match: "\\b\\((def!)"
+    name: "keyword.other.mal"
+  }
+  {
+    match: "\\b\\(?[\\+\\-\\*\\/]\\b"
+    name: "keyword.operator.mal"
+  }
+  {
+    match: "\\b\\(cond|do|if"
+    name: "keyword.control.mal"
+  }
+]
