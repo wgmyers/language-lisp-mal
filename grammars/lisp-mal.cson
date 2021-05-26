@@ -9,19 +9,69 @@ foldingStopMarker: ')'
 
 patterns: [
   {
-    match: ";.*$"
-    name: "comment.line.semicolon.mal"
+    match: ';.*$'
+    name: 'comment.line.semicolon.mal'
   }
   {
-    match: "\\b\\((def!)"
-    name: "keyword.other.mal"
+    match: "\\b(def!)\\s+([\\w\\-]+)"
+    captures:
+      1:
+        name: 'keyword.other.mal'
+      2:
+        name: 'entity.name.function.mal'
+    name: 'meta.function.mal'
+    comment: 'Modified borrow from language-lisp.'
   }
   {
-    match: "\\b\\(?[\\+\\-\\*\\/]\\b"
-    name: "keyword.operator.mal"
+    match: "\\((\\+|\\-|\\*|\\/|\\=|\\<\\=|\\>\\=|\\<|\\>)\\s"
+    captures:
+      1:
+        name: 'keyword.other.mal'
+    name: "meta.operator.mal"
+    comment: "Tears, pain and shouting were involved in the writing of this regexp."
   }
   {
-    match: "\\b\\(cond|do|if"
-    name: "keyword.control.mal"
+    match: '\\b(cond|do|if|let\\*)'
+    name: 'keyword.control.mal'
+  }
+  {
+    match: '\\b(prn|println|pr-str|str|list|count|read-string|slurp|atom|deref|cons|concat|vec|nth|first|rest|throw|apply|map|symbol)'
+    name: 'keyword.other.mal'
+  }
+  {
+    match: '\\b(keyword|vector|hash-map|assoc|dissoc|getkeys|vals|readline|time-ms|meta|with-meta|seq|conj|not|load-file|ruby-eval|\\w\\w\\*)'
+    name: 'keyword.other.mal'
+    comment: 'Most interop functions are of form \w\w\*, but I used ruby-eval.'
+  }
+  {
+    match: '\\b((list|empty|atom|nil|true|false|symbol|keyword|vector|sequential|map|contains|fn|string|number|macro)\\?)'
+    name: 'keyword.other.mal'
+  }
+  {
+    match: '\\b((reset|swap)\\!)'
+    name: 'keyword.other.mal'
+  }
+  {
+    match: '\\b((([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b'
+    name: 'constant.numeric.mal'
+    comment: 'Borrowed from language-lisp. Supports more numeric constants than Mal does.'
+  }
+  {
+    begin: '"'
+    beginCaptures:
+      0:
+        name: 'punctuation.definition.string.begin.mal'
+    end: '"'
+    endCaptures:
+      0:
+        name: 'punctuation.definition.string.end.mal'
+    name: 'string.quoted.double.mal'
+    patterns: [
+      {
+        match: '\\\\.'
+        name: 'constant.character.escape.mal'
+      }
+    ]
+    comment: 'Borrowed from language-lisp.'
   }
 ]
