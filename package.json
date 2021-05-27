@@ -8,7 +8,7 @@
     "highlighting",
     "grammars"
   ],
-  "repository": "https://github.com/wgmyers/language-lisp-mal",
+  "repository": "https://github.com/wgmyers/language-lisp-mal.git",
   "bugs": "https://github.com/wgmyers/language-lisp-mal/issues",
   "license": "MIT",
   "engines": {
