@@ -13,7 +13,7 @@ patterns: [
     name: 'comment.line.semicolon.mal'
   }
   {
-    match: "\\b(def!)\\s+([\\w\\-]+)"
+    match: "\\b(def!|defmacro!)\\s+([\\w\\-]+)"
     captures:
       1:
         name: 'keyword.other.mal'
