@@ -1,6 +1,6 @@
 {
   "name": "language-lisp-mal",
-  "version": "0.0.0",
+  "version": "0.8.0",
   "description": "Mal language support",
   "keywords": [
     "Mal",
@@ -8,12 +8,11 @@
     "highlighting",
     "grammars"
   ],
-  "repository": "https://github.com/wgmyers/language-lisp-mal.git",
+  "repository": "https://github.com/wgmyers/language-lisp-mal",
   "bugs": "https://github.com/wgmyers/language-lisp-mal/issues",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
