@@ -31,7 +31,7 @@ patterns: [
     comment: "Tears, pain and shouting were involved in the writing of this regexp."
   }
   {
-    match: '\\b(cond|do|if|let\\*)'
+    match: '\\b(cond|do|if|let\\*|fn\\*|quote|quasiquoteexpand|quasiquote|macroexpand|try\\*|catch\\*)'
     name: 'keyword.control.mal'
   }
   {
