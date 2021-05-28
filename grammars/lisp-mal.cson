@@ -13,7 +13,7 @@ patterns: [
     name: 'comment.line.semicolon.mal'
   }
   {
-    match: "\\b(def!|defmacro!)\\s+([\\w\\-]+)"
+    match: "\\b(def!|defmacro!)\\s+([\\w\\-\\<\\>\\*]+)"
     captures:
       1:
         name: 'keyword.other.mal'
@@ -35,7 +35,7 @@ patterns: [
     name: 'keyword.control.mal'
   }
   {
-    match: '\\b(prn|println|pr-str|str|list|count|read-string|slurp|atom|deref|cons|concat|vec|nth|first|rest|throw|apply|map|symbol)'
+    match: '\\b((list|empty|atom|nil|true|false|symbol|keyword|vector|sequential|map|contains|fn|string|number|macro)\\?)'
     name: 'keyword.other.mal'
   }
   {
@@ -44,7 +44,7 @@ patterns: [
     comment: 'Most interop functions are of form \w\w\*, but I used ruby-eval.'
   }
   {
-    match: '\\b((list|empty|atom|nil|true|false|symbol|keyword|vector|sequential|map|contains|fn|string|number|macro)\\?)'
+    match: '\\b(prn|println|pr-str|str|list|count|read-string|slurp|atom|deref|cons|concat|vec|nth|first|rest|throw|apply|map|symbol)'
     name: 'keyword.other.mal'
   }
   {
