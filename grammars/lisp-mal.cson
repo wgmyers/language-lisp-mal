@@ -39,7 +39,7 @@ patterns: [
     name: 'keyword.other.mal'
   }
   {
-    match: '\\b(keyword|vector|hash-map|assoc|dissoc|getkeys|vals|readline|time-ms|meta|with-meta|seq|conj|not|load-file|ruby-eval|\\w\\w\\*)'
+    match: '\\b(keyword|vector|hash-map|assoc|dissoc|get|keys|vals|readline|time-ms|meta|with-meta|seq|conj|not|load-file|ruby-eval|\\w\\w\\*)'
     name: 'keyword.other.mal'
     comment: 'Most interop functions are of form \w\w\*, but I used ruby-eval.'
   }
